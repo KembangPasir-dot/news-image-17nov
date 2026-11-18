@@ -1,8 +1,8 @@
 # The World in One Picture — 17 November 2026
 
-[![make.fun](https://img.shields.io/badge/make.fun-news--image--17nov-171717)](https://make.fun/bounty/news-image-20261117)
-[![make.fun bounty](https://img.shields.io/badge/News%20Image%20Bounty-news--image--17nov-9b1c1c)](https://make.fun/bounty/news-image-20261117)
-[![make.fun entry](https://img.shields.io/badge/Bounty%20Entry-news--image--17nov-171717)](https://make.fun/bounty/news-image-20261117)
+[![make.fun · news-image-20261117](https://make.fun/badge/news-image-20261117.svg)](https://make.fun/bounty/news-image-20261117?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261117)
+[![rank](https://make.fun/badge/news-image-20261117/KembangPasir-dot/news-image-17nov/rank.svg)](https://make.fun/bounty/news-image-20261117/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261117)
+[![reward](https://make.fun/badge/news-image-20261117/KembangPasir-dot/news-image-17nov/reward.svg)](https://make.fun/bounty/news-image-20261117?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261117)
 
 A square newspaper front page for Tuesday 17 November 2026, led by the report on the Kerch Bridge.
 

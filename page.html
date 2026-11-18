@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The World in One Picture — 17 November 2026</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      width: 1024px;
+      height: 1024px;
+      margin: 0;
+      overflow: hidden;
+      background: #f7f3ea;
+      color: #141413;
+    }
+    body { font-family: "Noto Serif", "DejaVu Serif", serif; }
+    .front-page { padding: 16px 30px 8px; }
+    .masthead {
+      border-block: 1px solid #141413;
+      text-align: center;
+    }
+    .masthead h1 {
+      margin: 5px 0 4px;
+      font-size: 44px;
+      line-height: 1.08;
+      letter-spacing: -3px;
+      white-space: nowrap;
+    }
+    .edition-line {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-top: 1px solid #141413;
+      font: 700 12px/1.2 "DejaVu Sans", sans-serif;
+      letter-spacing: 0px;
+    }
+    .lead {
+      display: grid;
+      grid-template-columns: 1.12fr 1fr;
+      align-items: stretch;
+      gap: 24px;
+      padding: 10px 0;
+      border-bottom: 1px solid #141413;
+    }
+    .kicker {
+      margin: 0 0 8px;
+      color: #9b1c1c;
+      font: 700 12px/1.2 "DejaVu Sans", sans-serif;
+      letter-spacing: 2px;
+    }
+    .lead h2 {
+      margin: 0 0 9px;
+      font-size: 30px;
+      line-height: 1.0;
+      letter-spacing: -1px;
+    }
+    .summary { margin: 0; font-size: 14px; line-height: 1.3; }
+    .bridge {
+      display: block;
+      align-self: stretch;
+      width: 100%;
+      height: 192px;
+      border: 1px solid #141413;
+      background: #e6eceb;
+    }
+    #tier-2 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .news-card {
+      padding: 4px 12px;
+      border-bottom: 1px solid #141413;
+      overflow-wrap: anywhere;
+    }
+    .news-card:not(:nth-child(3n)) { border-right: 1px solid #b8afa1; }
+    .news-card:nth-child(3n + 1) { padding-left: 0; }
+    .news-card:nth-child(3n) { padding-right: 0; }
+    .news-card .kicker { margin-bottom: 4px; font-size: 10px; }
+    .news-card h2 { margin: 0 0 5px; font-size: 19px; line-height: 1.05; }
+    .news-card .summary { font-size: 12px; line-height: 1.2; }
+    .regional-pair {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0 18px;
+      padding: 3px 0 2px;
+      border-bottom: 1px solid #141413;
+    }
+    .regional-pair .region { min-width: 0; }
+    .regional-pair .region:nth-child(n + 4) { margin-top: 7px; }
+    .region h2 {
+      margin: 0 0 1px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #b8afa1;
+    }
+    .region ul { list-style: none; padding: 0; margin: 0; }
+    .region li { padding: 0; font-size: 10px; line-height: 1.12; }
+    .story-no {
+      display: inline-block;
+      min-width: 17px;
+      margin-right: 2px;
+      color: #9b1c1c;
+      font: 700 10px/1 "DejaVu Sans", sans-serif;
+    }
+    .briefs {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 19px;
+      padding: 2px 0;
+      border-bottom: 1px solid #141413;
+      font: 700 10px/1.15 "DejaVu Sans", sans-serif;
+      white-space: nowrap;
+    }
+    .briefs-label { color: #9b1c1c; letter-spacing: 1px; }
+    .brief { flex: 1; }
+    .brief + .brief::before { content: "◆"; color: #9b1c1c; margin-right: 9px; }
+    .map-panel {
+      display: grid;
+      grid-template-columns: 1fr 185px;
+      gap: 14px;
+      align-items: center;
+      padding: 3px 0 2px;
+      border-bottom: 1px solid #141413;
+    }
+    .map-panel h2 {
+      margin: 0 0 3px;
+      font: 700 11px/1 "DejaVu Sans", sans-serif;
+      letter-spacing: 1px;
+      color: #9b1c1c;
+    }
+    .map-panel svg { display: block; width: 100%; height: 76px; background: #dcecf0; border: 1px solid #b8cdd0; }
+    .map-note { margin: 0; font: 9px/1.25 "DejaVu Sans", sans-serif; }
+    .map-side { align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+    .map-side p { margin: 3px 0; }
+    .footer {
+      border-top: 1px solid #141413;
+      padding-top: 4px;
+      text-align: center;
+      font: 9px/1 "DejaVu Sans", sans-serif;
+      letter-spacing: 0px;
+    }
+  </style>
+</head>
+<body>
+  <main class="front-page">
+    <header class="masthead">
+      <h1>THE WORLD IN ONE PICTURE</h1>
+      <div class="edition-line">
+        <time datetime="2026-11-17">Tuesday 17 November 2026</time>
+        <span>43 stories · 6 continents · All from Tuesday</span>
+      </div>
+    </header>
+
+    <article class="lead" aria-labelledby="lead-headline">
+      <div>
+        <p class="kicker"><span class="story-no">01</span> UKRAINE · LEAD</p>
+        <h2 id="lead-headline">UKRAINE STRIKES KERCH BRIDGE FOR SECOND DAY</h2>
+        <p class="summary">Road arch + span fell into Kerch Strait; road severed, 2 killed; rail on one track. Zelenskyy: 7th stage. Russia pounds Kyiv bridges in reply; Trump–Putin–Xi meet in Shenzhen, 19 Nov.</p>
+      </div>
+      <svg class="bridge" viewBox="0 0 440 222" preserveAspectRatio="xMidYMid slice"
+           role="img" aria-label="Schematic of a bridge with two towers and a broken span falling toward the water">
+        <path fill="#d4dfdf" d="M0 160H440V222H0Z"/>
+        <path fill="none" stroke="#788b8e" stroke-width="1.5" d="
+          M0 160 Q16 154 32 160 T64 160 T96 160 T128 160 T160 160 T192 160 T224 160 T256 160 T288 160 T320 160 T352 160 T384 160 T416 160 T448 160
+          M-16 183 Q0 177 16 183 T48 183 T80 183 T112 183 T144 183 T176 183 T208 183 T240 183 T272 183 T304 183 T336 183 T368 183 T400 183 T432 183 T464 183
+          M0 206 Q16 200 32 206 T64 206 T96 206 T128 206 T160 206 T192 206 T224 206 T256 206 T288 206 T320 206 T352 206 T384 206 T416 206 T448 206"/>
+        <g fill="none" stroke="#273739" stroke-linejoin="round">
+          <path stroke-width="6" d="M59 174V49H84V174 M356 174V49H381V174"/>
+          <path stroke-width="3" d="M59 68H84 M356 68H381 M9 101Q40 75 71 49Q104 78 151 103 M289 103Q337 78 369 49Q402 75 431 101"/>
+          <path stroke-width="2" d="M34 81V102 M110 78V102 M131 92V102 M310 93V102 M332 78V102 M407 81V102"/>
+        </g>
+        <g fill="#273739">
+          <path d="M0 102H154L164 111L153 115H0Z M440 102H288L278 107L287 115H440Z"/>
+          <path d="M170 116L181 114L270 151L279 164L263 163L174 129Z"/>
+          <path d="M155 137L160 142L152 145Z M287 134L293 139L286 145Z"/>
+        </g>
+        <path d="M182 129L192 142L207 140L216 152L231 151L242 162L261 162"
+              fill="none" stroke="#273739" stroke-width="2"/>
+      </svg>
+    </article>
+
+    <section id="tier-2" aria-label="Top stories">
+      <article class="news-card">
+        <p class="kicker"><span class="story-no">02</span> MIDDLE EAST</p>
+        <h2>Iran targets US radar in Bahrain</h2>
+        <p class="summary">Drones intercepted; no damage; 3rd attack in 5 days. US jets hit Qeshm Island IRGC missile site in reply; 4th tanker mined in Hormuz in 24h.</p>
+      </article>
+      <article class="news-card">
+        <p class="kicker"><span class="story-no">03</span> ASIA</p>
+        <h2>Quad targets China with minerals deals</h2>
+        <p class="summary">Trump’s first Quad in 2 years, Manila: US/Japan/Australia/India critical-minerals deals target China. Thailand: all US-goods tariffs axed; $2.6B more US farm goods.</p>
+      </article>
+      <article class="news-card">
+        <p class="kicker"><span class="story-no">04</span> AFRICA</p>
+        <h2>Ebola cases more than double in DR Congo</h2>
+        <p class="summary">More than doubled in 3 months: 11,000+ cases, 5,400 deaths, 67 health zones. Children: >¼ of cases, ⅓ of deaths. WHO emergency committee: 17 Nov.</p>
+      </article>
+      <article class="news-card">
+        <p class="kicker"><span class="story-no">05</span> BUSINESS</p>
+        <h2>Nvidia revenue doubles to record $115.8B</h2>
+        <p class="summary">First results since Jensen Huang’s removal; interim CEO Colette Kress: Q4 revenue ~$130B.</p>
+      </article>
+      <article class="news-card">
+        <p class="kicker"><span class="story-no">06</span> EUROPE</p>
+        <h2>Serbia’s student-backed MPs take their seats</h2>
+        <p class="summary">14 years of Vučić rule end; Student List: 140/250 seats, 90 days to form government.</p>
+      </article>
+      <article class="news-card">
+        <p class="kicker"><span class="story-no">07</span> ASIA</p>
+        <h2>Mongolia’s president resigns</h2>
+        <p class="summary">Khürelsükh quits amid corruption scandal.</p>
+      </article>
+    </section>
+
+    <div id="regional-columns">
+      <div class="regional-pair">
+        <section class="region">
+          <h2 class="kicker">EUROPE</h2>
+          <ul>
+            <li><span class="story-no">08</span>Moldova reports Russian drone over Chișinău.</li>
+            <li><span class="story-no">09</span>EU charges Temu: failed to stop illegal product sales.</li>
+            <li><span class="story-no">10</span>Le Pen: earlier retirement for many if elected in France.</li>
+            <li><span class="story-no">11</span>5 EU states plan Rwanda migrant return hub; UN rights chief Türk concerned.</li>
+            <li><span class="story-no">12</span>Europe stocks fall; Deutsche Bank slides pre-Nvidia results.</li>
+            <li><span class="story-no">13</span>France: Gérard Depardieu drops appeal, admits sexual assault charge.</li>
+          </ul>
+        </section>
+        <section class="region">
+          <h2 class="kicker">MIDDLE EAST</h2>
+          <ul>
+            <li><span class="story-no">14</span>UK/Australia/Canada/Italy: Israel must open Gaza crossings; WFP: 1.4M acutely hungry.</li>
+            <li><span class="story-no">15</span>Jericho: settler mob kills 72-year-old Palestinian woman; E1 tender frozen.</li>
+            <li><span class="story-no">16</span>Kataib Hezbollah defies Jurf al-Sakhar exit deadline from Baghdad.</li>
+            <li><span class="story-no">17</span>UK sanctions Israeli settlement firms for two-state solution.</li>
+            <li><span class="story-no">18</span>Yemen: Houthis advance; government troops quit coast to defend Aden.</li>
+          </ul>
+        </section>
+        <section class="region">
+          <h2 class="kicker">ASIA-PACIFIC</h2>
+          <ul>
+            <li><span class="story-no">19</span>Japan scrambles jets: Russian aircraft breach its airspace.</li>
+            <li><span class="story-no">20</span>Trump–Xi–Putin: first trilateral, Shenzhen, 19 Nov; nuclear arms, Iran.</li>
+            <li><span class="story-no">21</span>Trump may meet Kim Jong Un on China visit.</li>
+            <li><span class="story-no">22</span>Cyclone Akvan strengthens; Odisha plans to evacuate 204,000 people.</li>
+            <li><span class="story-no">23</span>Bangladesh wage protests: factories shut; police fire tear gas.</li>
+            <li><span class="story-no">24</span>US AI-chip curbs: Malaysia/Indonesia/Thailand/Singapore/Mexico/Brazil; block China diversions.</li>
+          </ul>
+        </section>
+        <section class="region">
+          <h2 class="kicker">AFRICA</h2>
+          <ul>
+            <li><span class="story-no">25</span>Mozambique opposition leader Mondlane on trial for terrorism over post-election protests.</li>
+            <li><span class="story-no">26</span>Kenya: last Ebola patient discharged; 42-day countdown.</li>
+            <li><span class="story-no">27</span>WHO validates Eritrea's trachoma elimination.</li>
+          </ul>
+        </section>
+        <section class="region">
+          <h2 class="kicker">AMERICAS</h2>
+          <ul>
+            <li><span class="story-no">28</span>US loses measles elimination after nearly 30 years; Mexico, Bolivia too.</li>
+            <li><span class="story-no">29</span>Pentagon fails annual audit for ninth straight year.</li>
+            <li><span class="story-no">30</span>NSA internal network crashes, disrupting operations.</li>
+            <li><span class="story-no">31</span>Forensic expert doubts Epstein prison suicide ruling.</li>
+            <li><span class="story-no">32</span>Robert White: D.C.’s first new delegate since 1991.</li>
+            <li><span class="story-no">33</span>Haiti cities’ protests back Salvadoran military operation.</li>
+          </ul>
+        </section>
+        <section class="region">
+          <h2 class="kicker">BUSINESS &amp; TECH</h2>
+          <ul>
+            <li><span class="story-no">34</span>Apple internal update downs iCloud/App Store/Pay/Music; 4th major outage in 4 business days.</li>
+            <li><span class="story-no">35</span>Anthropic IPO 7× oversubscribed pre-Nasdaq debut as ANTH.</li>
+            <li><span class="story-no">36</span>Bitcoin sell-off: stalls below $65,000; down >15% this month.</li>
+            <li><span class="story-no">37</span>Chase 16 Nov: software bug, no cyberattack; United outage fixed.</li>
+            <li><span class="story-no">38</span>COP31 Antalya: decisive phase; fossil-fuel exit splits talks.</li>
+            <li><span class="story-no">39</span>Oil between rising Mideast exports and tanker attacks.</li>
+          </ul>
+        </section>
+        <section class="region">
+          <h2 class="kicker">CULTURE &amp; SPORT</h2>
+          <ul>
+            <li><span class="story-no">40</span>Robert Pattinson: Bond; Denis Villeneuve directs Amazon MGM’s first Bond.</li>
+            <li><span class="story-no">41</span>India 2–1 Pakistan: 10th SAFF title; 88th-minute winner.</li>
+            <li><span class="story-no">42</span>Haaland late penalty: Norway edges Denmark into Nations League quarters.</li>
+            <li><span class="story-no">43</span>Tems tops Grammy nominations: four.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <section class="briefs" aria-label="Also on Tuesday">
+      <span class="briefs-label">ALSO ON TUESDAY</span>
+      <span class="brief">Pattinson named Bond</span>
+      <span class="brief">Bitcoin below $65K</span>
+      <span class="brief">Apple services outage</span>
+      <span class="brief">Measles status lost</span>
+      <span class="brief">Depardieu drops appeal</span>
+      <span class="brief">Tems: four nominations</span>
+    </section>
+
+    <section class="map-panel" aria-labelledby="map-title">
+      <div>
+        <h2 id="map-title">THE DAY, AT A GLANCE</h2>
+        <svg viewBox="0 0 760 154" role="img" aria-label="Schematic world map with numbered pins for stories 1 through 12">
+          <rect width="760" height="154" fill="#dcecf0"/>
+          <g fill="#d2d4cf" stroke="#aeb7b4" stroke-width="1">
+            <path d="M35 39 61 22 104 20 137 34 166 32 193 48 183 66 151 68 135 84 106 77 83 91 57 77 43 61Z"/>
+            <path d="M178 91 201 82 226 92 235 113 223 132 204 143 188 126 192 108Z"/>
+            <path d="M285 35 320 22 362 28 390 43 410 42 434 57 417 69 387 69 372 83 344 77 329 91 310 73 287 66Z"/>
+            <path d="M398 81 430 72 456 82 467 103 454 128 423 139 403 121 409 102Z"/>
+            <path d="M451 35 486 28 529 39 558 51 582 70 565 82 534 78 514 91 479 80 460 65Z"/>
+            <path d="M579 92 606 82 649 90 686 108 675 124 638 121 613 135 588 121Z"/>
+          </g>
+          <g fill="#6c8588" font-family="DejaVu Sans, sans-serif" font-size="7" letter-spacing="1">
+            <text x="170" y="18">PACIFIC</text><text x="320" y="18">ATLANTIC</text><text x="515" y="18">INDIAN</text>
+          </g>
+          <g fill="#9b1c1c" stroke="#fff" stroke-width="1.5" font-family="DejaVu Sans, sans-serif" font-size="8" font-weight="700" text-anchor="middle">
+            <circle cx="438" cy="62" r="8"/><text x="438" y="65" fill="#fff" stroke="none">1</text>
+            <circle cx="514" cy="68" r="8"/><text x="514" y="71" fill="#fff" stroke="none">2</text>
+            <circle cx="657" cy="91" r="8"/><text x="657" y="94" fill="#fff" stroke="none">3</text>
+            <circle cx="418" cy="112" r="8"/><text x="418" y="115" fill="#fff" stroke="none">4</text>
+            <circle cx="116" cy="49" r="8"/><text x="116" y="52" fill="#fff" stroke="none">5</text>
+            <circle cx="382" cy="78" r="8"/><text x="382" y="81" fill="#fff" stroke="none">6</text>
+            <circle cx="530" cy="50" r="8"/><text x="530" y="53" fill="#fff" stroke="none">7</text>
+            <circle cx="412" cy="38" r="8"/><text x="412" y="41" fill="#fff" stroke="none">8</text>
+            <circle cx="366" cy="40" r="8"/><text x="366" y="43" fill="#fff" stroke="none">9</text>
+            <circle cx="344" cy="58" r="8"/><text x="344" y="61" fill="#fff" stroke="none">10</text>
+            <circle cx="452" cy="116" r="8"/><text x="452" y="119" fill="#fff" stroke="none">11</text>
+            <circle cx="398" cy="56" r="8"/><text x="398" y="59" fill="#fff" stroke="none">12</text>
+          </g>
+        </svg>
+      </div>
+      <div class="map-side">
+        <p class="kicker">THE WORLD AT ONCE</p>
+        <p class="map-note">Pins 1–12 mark the day’s biggest stories</p>
+      </div>
+    </section>
+    <footer class="footer">THE WORLD IN ONE PICTURE · Tuesday 17 November 2026 · All 43 stories from Tuesday's news</footer>
+  </main>
+</body>
+</html>

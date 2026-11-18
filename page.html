@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The World in One Picture — 17 November 2026</title>
   <style>
+    :root {
+      --c-europe: #1d4ed8;
+      --c-mideast: #a33a08;
+      --c-asia: #106b31;
+      --c-africa: #bd1f1f;
+      --c-americas: #7c3aed;
+      --c-biztech: #05677d;
+      --c-culture: #b51f62;
+      --c-lead: #9b1c1c;
+    }
     * { box-sizing: border-box; }
     html, body {
       width: 1024px;
@@ -15,37 +25,67 @@
       color: #141413;
     }
     body { font-family: "Noto Serif", "DejaVu Serif", serif; }
-    .front-page { padding: 16px 30px 8px; }
+    .front-page { padding: 10px 30px 2px; }
     .masthead {
       border-block: 1px solid #141413;
       text-align: center;
     }
     .masthead h1 {
-      margin: 5px 0 4px;
-      font-size: 44px;
+      margin: 4px 0 3px;
+      font-size: 42px;
       line-height: 1.08;
       letter-spacing: -3px;
       white-space: nowrap;
     }
-    .edition-line {
-      display: flex;
-      justify-content: space-between;
-      padding: 5px 0;
+    .masthead-row {
+      display: grid;
+      grid-template-columns: 1fr 232px;
+      align-items: center;
+      gap: 18px;
+      padding: 4px 0;
       border-top: 1px solid #141413;
-      font: 700 12px/1.2 "DejaVu Sans", sans-serif;
-      letter-spacing: 0px;
+      border-bottom: 2px solid #141413;
+    }
+    .masthead-date time {
+      display: block;
+      color: #000;
+      font: 700 32px/1.2 "DejaVu Sans", sans-serif;
+      letter-spacing: 1px;
+    }
+    .masthead-date p {
+      margin: 0;
+      color: #444;
+      font: 11px/1.2 "DejaVu Sans", sans-serif;
+    }
+    .masthead-feature {
+      margin: 0;
+      text-align: center;
+      font: 700 11px/1.2 "DejaVu Sans", sans-serif;
+    }
+    .masthead-feature-kicker {
+      margin: 0;
+      color: var(--c-lead);
+      letter-spacing: 1px;
+      text-wrap: balance;
+    }
+    .masthead-feature svg {
+      display: block;
+      width: 100%;
+      height: 70px;
+      border: 1px solid #141413;
+      background: #e8f0f2;
     }
     .lead {
       display: grid;
       grid-template-columns: 1.12fr 1fr;
       align-items: stretch;
       gap: 24px;
-      padding: 10px 0;
+      padding: 6px 0;
       border-bottom: 1px solid #141413;
     }
     .kicker {
       margin: 0 0 8px;
-      color: #9b1c1c;
+      color: var(--c-lead);
       font: 700 12px/1.2 "DejaVu Sans", sans-serif;
       letter-spacing: 2px;
     }
@@ -60,7 +100,7 @@
       display: block;
       align-self: stretch;
       width: 100%;
-      height: 192px;
+      height: 92px;
       border: 1px solid #141413;
       background: #e6eceb;
     }
@@ -69,7 +109,8 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .news-card {
-      padding: 4px 12px;
+      padding: 1px 12px 2px;
+      border-top: 3px solid var(--accent);
       border-bottom: 1px solid #141413;
       overflow-wrap: anywhere;
     }
@@ -77,8 +118,10 @@
     .news-card:nth-child(3n + 1) { padding-left: 0; }
     .news-card:nth-child(3n) { padding-right: 0; }
     .news-card .kicker { margin-bottom: 4px; font-size: 10px; }
+    .news-card .kicker, .news-card .story-no { color: var(--accent); }
     .news-card h2 { margin: 0 0 5px; font-size: 19px; line-height: 1.05; }
     .news-card .summary { font-size: 12px; line-height: 1.2; }
+    .card-thumb { float: right; width: 62px; height: 44px; margin: 0 0 2px 6px; border: 1px solid #b8afa1; background: #eef2f2; }
     .regional-pair {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -88,13 +131,25 @@
     }
     .regional-pair .region { min-width: 0; }
     .regional-pair .region:nth-child(n + 4) { margin-top: 7px; }
+    .region-europe, .card-europe { --accent: var(--c-europe); }
+    .region-mideast, .card-mideast { --accent: var(--c-mideast); }
+    .region-asia, .card-asia { --accent: var(--c-asia); }
+    .region-africa, .card-africa { --accent: var(--c-africa); }
+    .region-americas { --accent: var(--c-americas); }
+    .region-biztech, .card-biztech { --accent: var(--c-biztech); }
+    .region-culture { --accent: var(--c-culture); }
     .region h2 {
-      margin: 0 0 1px;
-      padding-bottom: 2px;
-      border-bottom: 1px solid #b8afa1;
+      margin: 0 0 2px;
+      padding: 3px 6px;
+      height: 17px;
+      background: var(--accent);
+      color: #fff;
+      font: 700 11px/11px "DejaVu Sans", sans-serif;
+      letter-spacing: 1px;
     }
+    .region-icon { display: inline-block; width: 16px; height: 16px; vertical-align: -3px; margin-right: 5px; }
     .region ul { list-style: none; padding: 0; margin: 0; }
-    .region li { padding: 0; font-size: 10px; line-height: 1.12; }
+    .region li { padding: 0; font-size: 10px; line-height: 1.08; }
     .story-no {
       display: inline-block;
       min-width: 17px;
@@ -106,8 +161,8 @@
       display: flex;
       align-items: center;
       gap: 9px;
-      min-height: 19px;
-      padding: 2px 0;
+      min-height: 15px;
+      padding: 1px 0;
       border-bottom: 1px solid #141413;
       font: 700 10px/1.15 "DejaVu Sans", sans-serif;
       white-space: nowrap;
@@ -120,7 +175,7 @@
       grid-template-columns: 1fr 185px;
       gap: 14px;
       align-items: center;
-      padding: 3px 0 2px;
+      padding: 1px 0 1px;
       border-bottom: 1px solid #141413;
     }
     .map-panel h2 {
@@ -129,13 +184,13 @@
       letter-spacing: 1px;
       color: #9b1c1c;
     }
-    .map-panel svg { display: block; width: 100%; height: 76px; background: #dcecf0; border: 1px solid #b8cdd0; }
+    .map-panel svg { display: block; width: 100%; height: 40px; background: #dcecf0; border: 1px solid #b8cdd0; }
     .map-note { margin: 0; font: 9px/1.25 "DejaVu Sans", sans-serif; }
     .map-side { align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
     .map-side p { margin: 3px 0; }
     .footer {
       border-top: 1px solid #141413;
-      padding-top: 4px;
+      padding-top: 2px;
       text-align: center;
       font: 9px/1 "DejaVu Sans", sans-serif;
       letter-spacing: 0px;
@@ -146,9 +201,52 @@
   <main class="front-page">
     <header class="masthead">
       <h1>THE WORLD IN ONE PICTURE</h1>
-      <div class="edition-line">
-        <time datetime="2026-11-17">Tuesday 17 November 2026</time>
-        <span>43 stories · 6 continents · All from Tuesday</span>
+      <div class="masthead-row">
+        <div class="masthead-date">
+          <time datetime="2026-11-17">TUESDAY 17 NOVEMBER 2026</time>
+          <p>All 43 stories from Tuesday's news — one page, six continents.</p>
+        </div>
+        <figure class="masthead-feature">
+          <p class="masthead-feature-kicker">43 STORIES · 6 CONTINENTS · ALL FROM TUESDAY</p>
+          <svg viewBox="0 0 230 90" role="img" aria-label="Flags of the United States, Japan, Australia and India on summit flagpoles">
+            <path d="M0 70H230V90H0Z" fill="#cedfe5"/>
+            <path d="M13 76H217" stroke="#829ba6"/>
+            <path d="M14 76V18M66 76V18M118 76V18M170 76V18" stroke="#283e4b" stroke-width="2"/>
+            <g fill="#283e4b">
+              <circle cx="14" cy="17" r="2"/><circle cx="66" cy="17" r="2"/>
+              <circle cx="118" cy="17" r="2"/><circle cx="170" cy="17" r="2"/>
+            </g>
+            <g transform="translate(15 22)">
+              <rect width="44" height="26" fill="#fff"/>
+              <path d="M0 1H44M0 5H44M0 9H44M0 13H44M0 17H44M0 21H44M0 25H44" stroke="#b91c32" stroke-width="2"/>
+              <rect width="19" height="14" fill="#23447c"/>
+              <path d="M3 3h1m3 0h1m3 0h1m3 0h1M5 7h1m3 0h1m3 0h1M3 11h1m3 0h1m3 0h1m3 0h1"
+                    stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            </g>
+            <g transform="translate(67 22)">
+              <rect width="44" height="26" fill="#fff"/>
+              <circle cx="22" cy="13" r="8" fill="#bc002d"/>
+            </g>
+            <g transform="translate(119 22)">
+              <rect width="44" height="26" fill="#173a7a"/>
+              <path d="M0 0L19 12M19 0L0 12M9 0V12M0 6H19" stroke="#fff" stroke-width="3"/>
+              <path d="M9 0V12M0 6H19" stroke="#d51e3f" stroke-width="2"/>
+              <path d="M9 16l1 2h2l-1 2v2l-2-1-2 1v-2l-1-2h2Z
+                       M33 3l1 2h2l-2 1v2l-1-1-1 1V6l-2-1h2Z
+                       M27 10l1 2h2l-2 1v2l-1-1-1 1v-2l-2-1h2Z
+                       M39 9l1 2h2l-2 1v2l-1-1-1 1v-2l-2-1h2Z
+                       M34 18l1 2h2l-2 1v2l-1-1-1 1v-2l-2-1h2Z" fill="#fff"/>
+            </g>
+            <g transform="translate(171 22)">
+              <rect width="44" height="26" fill="#fff"/>
+              <path d="M0 0H44V9H0Z" fill="#ff9933"/>
+              <path d="M0 17H44V26H0Z" fill="#138808"/>
+              <circle cx="22" cy="13" r="3" fill="none" stroke="#152b78"/>
+              <path d="M19 13H25M22 10V16M20 11L24 15M24 11L20 15" stroke="#152b78"/>
+            </g>
+          </svg>
+          <figcaption>QUAD LEADERS' SUMMIT — MANILA</figcaption>
+        </figure>
       </div>
     </header>
 
@@ -181,32 +279,79 @@
     </article>
 
     <section id="tier-2" aria-label="Top stories">
-      <article class="news-card">
+      <article class="news-card card-mideast">
+        <svg class="card-thumb" viewBox="0 0 62 44" role="img" aria-label="Schematic drone over radar arcs">
+          <path d="M13 31A10 10 0 0 1 23 41M13 23A18 18 0 0 1 31 41M13 15A26 26 0 0 1 39 41" fill="none" stroke="#ea580c" stroke-width="1.5"/>
+          <path d="M29 12 22 8M29 12 36 8M29 12 23 17M29 12 35 17" stroke="#273739" stroke-width="2" stroke-linecap="round"/>
+          <path d="M25 10 29 8 33 10 33 13 29 15 25 13Z" fill="#ea580c" stroke="#273739" stroke-width="1.2"/>
+          <ellipse cx="21" cy="7.5" rx="4" ry="1.5" fill="#273739"/><ellipse cx="37" cy="7.5" rx="4" ry="1.5" fill="#273739"/>
+          <ellipse cx="22" cy="18" rx="4" ry="1.5" fill="#273739"/><ellipse cx="36" cy="18" rx="4" ry="1.5" fill="#273739"/>
+        </svg>
         <p class="kicker"><span class="story-no">02</span> MIDDLE EAST</p>
         <h2>Iran targets US radar in Bahrain</h2>
         <p class="summary">Drones intercepted; no damage; 3rd attack in 5 days. US jets hit Qeshm Island IRGC missile site in reply; 4th tanker mined in Hormuz in 24h.</p>
       </article>
-      <article class="news-card">
+      <article class="news-card card-asia">
+        <svg class="card-thumb" viewBox="0 0 62 44" role="img" aria-label="Schematic globe with location pin">
+          <circle cx="26" cy="22" r="16" fill="#e6eceb" stroke="#273739" stroke-width="2"/>
+          <path d="M11 18Q26 24 41 18M12 27Q26 21 40 27M26 6C18 14 18 30 26 38M26 6C34 14 34 30 26 38" fill="none" stroke="#16a34a" stroke-width="1.4"/>
+          <path d="M46 7C41 7 38 10 38 14C38 20 46 27 46 27S54 20 54 14C54 10 51 7 46 7Z" fill="#16a34a" stroke="#273739" stroke-width="1.3"/>
+          <circle cx="46" cy="14" r="2.2" fill="#eef2f2" stroke="#273739" stroke-width="1"/>
+        </svg>
         <p class="kicker"><span class="story-no">03</span> ASIA</p>
         <h2>Quad targets China with minerals deals</h2>
         <p class="summary">Trump’s first Quad in 2 years, Manila: US/Japan/Australia/India critical-minerals deals target China. Thailand: all US-goods tariffs axed; $2.6B more US farm goods.</p>
       </article>
-      <article class="news-card">
+      <article class="news-card card-africa">
+        <svg class="card-thumb" viewBox="0 0 62 44" role="img" aria-label="Schematic virus cell with spikes and internal dots">
+          <g stroke="#273739" stroke-width="2" stroke-linecap="round">
+            <path d="M31 3V8M31 36V41M13 22H8M54 22H49M18 9 21 13M41 31 44 35M44 9 41 13M21 31 18 35"/>
+          </g>
+          <g fill="#dc2626" stroke="#273739" stroke-width="1.5">
+            <circle cx="31" cy="22" r="14"/>
+          </g>
+          <g fill="#eef2f2">
+            <circle cx="26" cy="17" r="1.8"/><circle cx="35" cy="16" r="1.5"/><circle cx="39" cy="23" r="2"/>
+            <circle cx="30" cy="26" r="1.7"/><circle cx="23" cy="25" r="1.3"/><circle cx="34" cy="30" r="1.4"/>
+          </g>
+        </svg>
         <p class="kicker"><span class="story-no">04</span> AFRICA</p>
         <h2>Ebola cases more than double in DR Congo</h2>
         <p class="summary">More than doubled in 3 months: 11,000+ cases, 5,400 deaths, 67 health zones. Children: >¼ of cases, ⅓ of deaths. WHO emergency committee: 17 Nov.</p>
       </article>
-      <article class="news-card">
+      <article class="news-card card-biztech">
+        <svg class="card-thumb" viewBox="0 0 62 44" role="img" aria-label="Schematic microchip with pins">
+          <rect x="18" y="8" width="26" height="26" rx="2" fill="#e6eceb" stroke="#273739" stroke-width="2"/>
+          <rect x="25" y="15" width="12" height="12" fill="#0891b2" stroke="#273739" stroke-width="1.5"/>
+          <g stroke="#273739" stroke-width="2" stroke-linecap="round">
+            <path d="M22 4V8M31 4V8M40 4V8M22 34V38M31 34V38M40 34V38M14 14H18M14 21H18M14 28H18M44 14H48M44 21H48M44 28H48"/>
+          </g>
+        </svg>
         <p class="kicker"><span class="story-no">05</span> BUSINESS</p>
         <h2>Nvidia revenue doubles to record $115.8B</h2>
         <p class="summary">First results since Jensen Huang’s removal; interim CEO Colette Kress: Q4 revenue ~$130B.</p>
       </article>
-      <article class="news-card">
+      <article class="news-card card-europe">
+        <svg class="card-thumb" viewBox="0 0 62 44" role="img" aria-label="Schematic parliament building with dome and columns">
+          <circle cx="31" cy="7" r="4" fill="#1d4ed8" stroke="#273739" stroke-width="1.3"/>
+          <path d="M13 18 31 10 49 18Z" fill="#1d4ed8" stroke="#273739" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M15 20H47M12 36H50M9 40H53" fill="none" stroke="#273739" stroke-width="2" stroke-linecap="square"/>
+          <g stroke="#273739" stroke-width="2">
+            <path d="M18 21V35M27 21V35M36 21V35M45 21V35"/>
+          </g>
+        </svg>
         <p class="kicker"><span class="story-no">06</span> EUROPE</p>
         <h2>Serbia’s student-backed MPs take their seats</h2>
         <p class="summary">14 years of Vučić rule end; Student List: 140/250 seats, 90 days to form government.</p>
       </article>
-      <article class="news-card">
+      <article class="news-card card-asia">
+        <svg class="card-thumb" viewBox="0 0 62 44" role="img" aria-label="Schematic Mongolian flag with red blue red bars and emblem">
+          <rect x="10" y="7" width="42" height="30" fill="#eef2f2" stroke="#273739" stroke-width="1.5"/>
+          <path d="M11 8H23V36H11ZM39 8H51V36H39Z" fill="#dc2626"/>
+          <path d="M24 8H38V36H24Z" fill="#1d4ed8"/>
+          <path d="M17 14 20 18 17 22 14 18Z" fill="#facc15" stroke="#273739" stroke-width="1"/>
+          <circle cx="17" cy="26" r="2" fill="#facc15"/>
+        </svg>
         <p class="kicker"><span class="story-no">07</span> ASIA</p>
         <h2>Mongolia’s president resigns</h2>
         <p class="summary">Khürelsükh quits amid corruption scandal.</p>
@@ -215,8 +360,10 @@
 
     <div id="regional-columns">
       <div class="regional-pair">
-        <section class="region">
-          <h2 class="kicker">EUROPE</h2>
+        <section class="region region-europe">
+          <h2 class="kicker"><svg class="region-icon" viewBox="0 0 16 16" role="img" aria-label="Ring of eight stars">
+            <g fill="white"><circle cx="8" cy="1.5" r="1.1"/><circle cx="12.6" cy="3.4" r="1.1"/><circle cx="14.5" cy="8" r="1.1"/><circle cx="12.6" cy="12.6" r="1.1"/><circle cx="8" cy="14.5" r="1.1"/><circle cx="3.4" cy="12.6" r="1.1"/><circle cx="1.5" cy="8" r="1.1"/><circle cx="3.4" cy="3.4" r="1.1"/></g>
+          </svg>EUROPE</h2>
           <ul>
             <li><span class="story-no">08</span>Moldova reports Russian drone over Chișinău.</li>
             <li><span class="story-no">09</span>EU charges Temu: failed to stop illegal product sales.</li>
@@ -226,8 +373,11 @@
             <li><span class="story-no">13</span>France: Gérard Depardieu drops appeal, admits sexual assault charge.</li>
           </ul>
         </section>
-        <section class="region">
-          <h2 class="kicker">MIDDLE EAST</h2>
+        <section class="region region-mideast">
+          <h2 class="kicker"><svg class="region-icon" viewBox="0 0 16 16" role="img" aria-label="Dome and crescent">
+            <path d="M3 13A5 5 0 0 1 13 13M2 13H14M4 13V15M12 13V15" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M8 1.5A2.2 2.2 0 1 0 10.7 4 2.1 2.1 0 0 1 8 1.5Z" fill="white"/>
+          </svg>MIDDLE EAST</h2>
           <ul>
             <li><span class="story-no">14</span>UK/Australia/Canada/Italy: Israel must open Gaza crossings; WFP: 1.4M acutely hungry.</li>
             <li><span class="story-no">15</span>Jericho: settler mob kills 72-year-old Palestinian woman; E1 tender frozen.</li>
@@ -236,8 +386,10 @@
             <li><span class="story-no">18</span>Yemen: Houthis advance; government troops quit coast to defend Aden.</li>
           </ul>
         </section>
-        <section class="region">
-          <h2 class="kicker">ASIA-PACIFIC</h2>
+        <section class="region region-asia">
+          <h2 class="kicker"><svg class="region-icon" viewBox="0 0 16 16" role="img" aria-label="Pagoda">
+            <path d="M8 1V3M3 5H13L11.5 6.5H4.5ZM4 8H12L10.8 9.5H5.2ZM5 11H11L10 12.5H6ZM5 14H11" fill="white" stroke="white" stroke-width="1" stroke-linejoin="round"/>
+          </svg>ASIA-PACIFIC</h2>
           <ul>
             <li><span class="story-no">19</span>Japan scrambles jets: Russian aircraft breach its airspace.</li>
             <li><span class="story-no">20</span>Trump–Xi–Putin: first trilateral, Shenzhen, 19 Nov; nuclear arms, Iran.</li>
@@ -247,16 +399,21 @@
             <li><span class="story-no">24</span>US AI-chip curbs: Malaysia/Indonesia/Thailand/Singapore/Mexico/Brazil; block China diversions.</li>
           </ul>
         </section>
-        <section class="region">
-          <h2 class="kicker">AFRICA</h2>
+        <section class="region region-africa">
+          <h2 class="kicker"><svg class="region-icon" viewBox="0 0 16 16" role="img" aria-label="Outline of Africa">
+            <path d="M5 1.5 9 2 10 4 13 5 12.5 7.5 14 9 11.5 10 11 13 9 15 7 12 5.5 11.5 5 9 3.5 8 4 6 2.5 4Z" fill="white"/>
+          </svg>AFRICA</h2>
           <ul>
             <li><span class="story-no">25</span>Mozambique opposition leader Mondlane on trial for terrorism over post-election protests.</li>
             <li><span class="story-no">26</span>Kenya: last Ebola patient discharged; 42-day countdown.</li>
             <li><span class="story-no">27</span>WHO validates Eritrea's trachoma elimination.</li>
           </ul>
         </section>
-        <section class="region">
-          <h2 class="kicker">AMERICAS</h2>
+        <section class="region region-americas">
+          <h2 class="kicker"><svg class="region-icon" viewBox="0 0 16 16" role="img" aria-label="Torch with flame">
+            <path d="M8 1C6 3 5.5 4.2 6 6L8 8 10 6C10.5 4.2 10 3 8 1Z" fill="white"/>
+            <path d="M6 8H10L9 10V14H7V10Z" fill="none" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>AMERICAS</h2>
           <ul>
             <li><span class="story-no">28</span>US loses measles elimination after nearly 30 years; Mexico, Bolivia too.</li>
             <li><span class="story-no">29</span>Pentagon fails annual audit for ninth straight year.</li>
@@ -266,8 +423,10 @@
             <li><span class="story-no">33</span>Haiti cities’ protests back Salvadoran military operation.</li>
           </ul>
         </section>
-        <section class="region">
-          <h2 class="kicker">BUSINESS &amp; TECH</h2>
+        <section class="region region-biztech">
+          <h2 class="kicker"><svg class="region-icon" viewBox="0 0 16 16" role="img" aria-label="Three-bar chart">
+            <path d="M2 14V9H5V14ZM7 14V5H10V14ZM12 14V2H15V14Z" fill="white"/>
+          </svg>BUSINESS &amp; TECH</h2>
           <ul>
             <li><span class="story-no">34</span>Apple internal update downs iCloud/App Store/Pay/Music; 4th major outage in 4 business days.</li>
             <li><span class="story-no">35</span>Anthropic IPO 7× oversubscribed pre-Nasdaq debut as ANTH.</li>
@@ -277,8 +436,11 @@
             <li><span class="story-no">39</span>Oil between rising Mideast exports and tanker attacks.</li>
           </ul>
         </section>
-        <section class="region">
-          <h2 class="kicker">CULTURE &amp; SPORT</h2>
+        <section class="region region-culture">
+          <h2 class="kicker"><svg class="region-icon" viewBox="0 0 16 16" role="img" aria-label="Ball with curved seam">
+            <circle cx="8" cy="8" r="6.5" fill="none" stroke="white" stroke-width="1.5"/>
+            <path d="M4 3.2C7 5 9 11 12 12.8M12 3.2C9 5 7 11 4 12.8" fill="none" stroke="white" stroke-width="1"/>
+          </svg>CULTURE &amp; SPORT</h2>
           <ul>
             <li><span class="story-no">40</span>Robert Pattinson: Bond; Denis Villeneuve directs Amazon MGM’s first Bond.</li>
             <li><span class="story-no">41</span>India 2–1 Pakistan: 10th SAFF title; 88th-minute winner.</li>
@@ -311,9 +473,6 @@
             <path d="M398 81 430 72 456 82 467 103 454 128 423 139 403 121 409 102Z"/>
             <path d="M451 35 486 28 529 39 558 51 582 70 565 82 534 78 514 91 479 80 460 65Z"/>
             <path d="M579 92 606 82 649 90 686 108 675 124 638 121 613 135 588 121Z"/>
-          </g>
-          <g fill="#6c8588" font-family="DejaVu Sans, sans-serif" font-size="7" letter-spacing="1">
-            <text x="170" y="18">PACIFIC</text><text x="320" y="18">ATLANTIC</text><text x="515" y="18">INDIAN</text>
           </g>
           <g fill="#9b1c1c" stroke="#fff" stroke-width="1.5" font-family="DejaVu Sans, sans-serif" font-size="8" font-weight="700" text-anchor="middle">
             <circle cx="438" cy="62" r="8"/><text x="438" y="65" fill="#fff" stroke="none">1</text>
